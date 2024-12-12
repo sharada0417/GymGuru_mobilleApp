@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:wrokout_planner/pages/add_newpage.dart';
 import 'package:wrokout_planner/pages/favourite_page.dart';
 import 'package:wrokout_planner/pages/home_page.dart';
@@ -28,6 +29,10 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: "Gym Guru",
+        theme: ThemeData(
+          primaryColor: Colors.blue,
+          textTheme: GoogleFonts.interTextTheme(Theme.of(context).textTheme),
+        ),
         home: Scaffold(
           bottomNavigationBar: BottomNavigationBar(
             selectedItemColor: Colors.green,
