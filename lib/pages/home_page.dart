@@ -5,6 +5,7 @@ import 'package:wrokout_planner/constants/responsive.dart';
 import 'package:wrokout_planner/data/equipment_data.dart';
 import 'package:wrokout_planner/data/exercise_data.dart';
 import 'package:wrokout_planner/data/user_data.dart';
+import 'package:wrokout_planner/pages/equipment.page.dart';
 import 'package:wrokout_planner/pages/excersie_details.dart';
 import 'package:wrokout_planner/widgets/exercise_card.dart';
 import 'package:wrokout_planner/widgets/progress_card.dart';
@@ -97,11 +98,12 @@ class _HomePageState extends State<HomePage> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => ExcersiseDetails(
-                                    exerciseTitle: "Equipment",
-                                    exerciseDescription:
-                                        " A brief session before exercise to prepare the body. It includes light cardio, dynamic stretches, and mobility exercises to increase blood flow, loosen muscles, and enhance flexibility. This helps prevent injuries and improves performance.",
-                                    exerciseList: exerciseList)));
+                                builder: (context) => EquipmentDetailsPage(
+                                      equipmentTitle: "Equipments",
+                                      equipmentDescription:
+                                          "Gym equipment includes machines, weights, and tools designed for strength training, cardio, and flexibility exercises. Common equipment includes dumbbells, barbells, treadmills, resistance bands, and rowing machines. Each piece targets specific muscle groups and helps improve fitness levels.",
+                                      equipmentList: equipmentData,
+                                    )));
                       },
                       child: const ExerciseCard(
                           title: "Equipment",

@@ -7,7 +7,7 @@ class EquipmentData {
         equipmentName: "Dumbells",
         equipmentDescription:
             "A pair of dumbells for strength traning excersise",
-        equipmentImageUrl: "assets/images/equipments/dumbell.png",
+        equipmentImageUrl: "assets/images/equipments/dumbbells.png",
         noOfCalories: 2,
         noOfMinuites: 5,
         handOvered: false),
