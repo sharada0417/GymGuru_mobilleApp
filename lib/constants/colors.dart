@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
-const kSubtitleColor = Color.fromARGB(255, 118, 115, 115);
-const KMainWhiteColor = Colors.white;
+const kSubtitleColor = Color.fromARGB(255, 201, 197, 197);
+const KMainWhiteColor =
+    Color.from(alpha: 1, red: 0.875, green: 0.847, blue: 0.847);
+const kCardBgColor = Color.fromARGB(255, 236, 229, 229);
 const KMainColor = Color.fromARGB(255, 7, 243, 58);
 
 const kMainBlackColor = Color.fromARGB(236, 0, 0, 0);

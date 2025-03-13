@@ -3,6 +3,8 @@ import 'package:intl/intl.dart';
 import 'package:wrokout_planner/constants/colors.dart';
 import 'package:wrokout_planner/constants/responsive.dart';
 import 'package:wrokout_planner/data/user_data.dart';
+import 'package:wrokout_planner/widgets/exercise_card.dart';
+import 'package:wrokout_planner/widgets/progress_card.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -44,6 +46,52 @@ class _HomePageState extends State<HomePage> {
                       fontSize: 25,
                       fontWeight: FontWeight.w700,
                       color: kMainBlackColor),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                const ProgressCard(progressValue: 0.5, total: 100),
+                const SizedBox(
+                  height: 25,
+                ),
+                const Text(
+                  "Today Activity",
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                const Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    ExerciseCard(
+                        title: "Warm Up",
+                        imageUrl: "assets/images/exercises/downward-facing.png",
+                        description: "see more"),
+                    ExerciseCard(
+                        title: "Equipment",
+                        imageUrl: "assets/images/equipments/facial-roller.png",
+                        description: "see more"),
+                  ],
+                ),
+                const SizedBox(
+                  height: 17,
+                ),
+                const Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    ExerciseCard(
+                        title: "Excersise",
+                        imageUrl: "assets/images/exercises/dragging.png",
+                        description: "see more"),
+                    ExerciseCard(
+                        title: "Streching",
+                        imageUrl: "assets/images/exercises/triangle.png",
+                        description: "see more"),
+                  ],
                 )
               ],
             ),
