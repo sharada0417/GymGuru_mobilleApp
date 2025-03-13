@@ -74,6 +74,27 @@ class _AddNewpageState extends State<AddNewpage> {
                         exerciseTitle: exercise.exerciseName,
                         exerciseImageUrl: exercise.exerciseImageUrl,
                         noOfMinitues: exercise.noOfMinuites,
+                        isAdded: userData.exerciseList.contains(exercise),
+                        isFavourited:
+                            userData.favExerciseList.contains(exercise),
+                        toggleAddExercise: () {
+                          setState(() {
+                            if (userData.exerciseList.contains(exercise)) {
+                              userData.removeExercise(exercise);
+                            } else {
+                              userData.addExercise(exercise);
+                            }
+                          });
+                        },
+                        toggleAddFavExercise: () {
+                          setState(() {
+                            if (userData.favExerciseList.contains(exercise)) {
+                              userData.removeExercise(exercise);
+                            } else {
+                              userData.addFavExerciseList(exercise);
+                            }
+                          });
+                        },
                       );
                     },
                   ),

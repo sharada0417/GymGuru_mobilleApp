@@ -6,12 +6,20 @@ class AddExerciseCard extends StatefulWidget {
   final String exerciseTitle;
   final String exerciseImageUrl;
   final int noOfMinitues;
+  final void Function() toggleAddExercise;
+  final void Function() toggleAddFavExercise;
+  final bool isAdded;
+  final bool isFavourited;
 
   const AddExerciseCard(
       {super.key,
       required this.exerciseTitle,
       required this.noOfMinitues,
-      required this.exerciseImageUrl});
+      required this.exerciseImageUrl,
+      required this.toggleAddExercise,
+      required this.isAdded,
+      required this.toggleAddFavExercise,
+      required this.isFavourited});
 
   @override
   State<AddExerciseCard> createState() => _AddExerciseCardState();
@@ -79,9 +87,11 @@ class _AddExerciseCardState extends State<AddExerciseCard> {
                       ),
                       child: Center(
                           child: IconButton(
-                              onPressed: () {},
-                              icon: const Icon(
-                                Icons.add,
+                              onPressed: () {
+                                widget.toggleAddExercise();
+                              },
+                              icon: Icon(
+                                widget.isAdded ? Icons.remove : Icons.add,
                                 size: 30,
                                 color: KMainDarkGreenColor,
                               )))),
@@ -94,9 +104,13 @@ class _AddExerciseCardState extends State<AddExerciseCard> {
                       ),
                       child: Center(
                           child: IconButton(
-                              onPressed: () {},
-                              icon: const Icon(
-                                Icons.favorite_border,
+                              onPressed: () {
+                                widget.toggleAddFavExercise();
+                              },
+                              icon: Icon(
+                                widget.isFavourited
+                                    ? Icons.favorite
+                                    : Icons.favorite_border,
                                 size: 30,
                                 color: KMainRedColor,
                               ))))
