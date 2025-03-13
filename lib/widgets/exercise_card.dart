@@ -40,7 +40,7 @@ class ExerciseCard extends StatelessWidget {
             ),
             Image.asset(
               imageUrl,
-              width: 100,
+              width: 90,
               fit: BoxFit.cover,
             ),
             const SizedBox(

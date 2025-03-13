@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:wrokout_planner/constants/colors.dart';
 import 'package:wrokout_planner/constants/responsive.dart';
+import 'package:wrokout_planner/data/equipment_data.dart';
+import 'package:wrokout_planner/data/exercise_data.dart';
 import 'package:wrokout_planner/data/user_data.dart';
+import 'package:wrokout_planner/pages/excersie_details.dart';
 import 'package:wrokout_planner/widgets/exercise_card.dart';
 import 'package:wrokout_planner/widgets/progress_card.dart';
 
@@ -20,6 +23,11 @@ class _HomePageState extends State<HomePage> {
 
   //User data
   final userData = user;
+
+  //exercise and equipment data
+  final exerciseList = ExerciseData().exerciseList;
+  final equipmentData = EquipmentData().equipmentList;
+
   @override
   Widget build(BuildContext context) {
     DateTime now = DateTime.now();
@@ -64,33 +72,83 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox(
                   height: 10,
                 ),
-                const Row(
+                Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    ExerciseCard(
-                        title: "Warm Up",
-                        imageUrl: "assets/images/exercises/downward-facing.png",
-                        description: "see more"),
-                    ExerciseCard(
-                        title: "Equipment",
-                        imageUrl: "assets/images/equipments/facial-roller.png",
-                        description: "see more"),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ExcersiseDetails(
+                                    exerciseTitle: "Exersise",
+                                    exerciseDescription:
+                                        " A brief session before exercise to prepare the body. It includes light cardio, dynamic stretches, and mobility exercises to increase blood flow, loosen muscles, and enhance flexibility. This helps prevent injuries and improves performance.",
+                                    exerciseList: exerciseList)));
+                      },
+                      child: const ExerciseCard(
+                          title: "  Exersise",
+                          imageUrl:
+                              "assets/images/exercises/downward-facing.png",
+                          description: "see more"),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ExcersiseDetails(
+                                    exerciseTitle: "Equipment",
+                                    exerciseDescription:
+                                        " A brief session before exercise to prepare the body. It includes light cardio, dynamic stretches, and mobility exercises to increase blood flow, loosen muscles, and enhance flexibility. This helps prevent injuries and improves performance.",
+                                    exerciseList: exerciseList)));
+                      },
+                      child: const ExerciseCard(
+                          title: "Equipment",
+                          imageUrl:
+                              "assets/images/equipments/facial-roller.png",
+                          description: "see more"),
+                    ),
                   ],
                 ),
                 const SizedBox(
                   height: 17,
                 ),
-                const Row(
+                Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    ExerciseCard(
-                        title: "Excersise",
-                        imageUrl: "assets/images/exercises/dragging.png",
-                        description: "see more"),
-                    ExerciseCard(
-                        title: "Streching",
-                        imageUrl: "assets/images/exercises/triangle.png",
-                        description: "see more"),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ExcersiseDetails(
+                                    exerciseTitle: "Excersise",
+                                    exerciseDescription:
+                                        " A brief session before exercise to prepare the body. It includes light cardio, dynamic stretches, and mobility exercises to increase blood flow, loosen muscles, and enhance flexibility. This helps prevent injuries and improves performance.",
+                                    exerciseList: exerciseList)));
+                      },
+                      child: const ExerciseCard(
+                          title: "Excersise",
+                          imageUrl: "assets/images/exercises/dragging.png",
+                          description: "see more"),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ExcersiseDetails(
+                                    exerciseTitle: "Streching",
+                                    exerciseDescription:
+                                        " A brief session before exercise to prepare the body. It includes light cardio, dynamic stretches, and mobility exercises to increase blood flow, loosen muscles, and enhance flexibility. This helps prevent injuries and improves performance.",
+                                    exerciseList: exerciseList)));
+                      },
+                      child: const ExerciseCard(
+                          title: "Streching",
+                          imageUrl: "assets/images/exercises/triangle.png",
+                          description: "see more"),
+                    ),
                   ],
                 )
               ],
